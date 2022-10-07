@@ -26,7 +26,7 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Currency 2</ion-label>
-        <ion-select [(ngModel)]="valueCurrency">
+        <ion-select (ionChange)="nidhal(c2.value)" #c2 value="TND">
           <ion-select-option *ngFor="let curr of tabCurrencies" [value]="curr">{{curr}}</ion-select-option>
           <!-- <ion-select-option value="EUR">Euro</ion-select-option>
           <ion-select-option value="TND">TND</ion-select-option>
@@ -39,7 +39,7 @@
 
       </ion-item>
 
-      <ion-button (click)="onConvert()" expand="block" color="secondary">Convert</ion-button>
+      <ion-button (click)="onConvert(c2.value)" expand="block" color="secondary">Convert</ion-button>
 
     </ion-card-content>
   </ion-card>
